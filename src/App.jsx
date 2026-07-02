@@ -520,9 +520,15 @@ function App() {
               </div>
             </div>
 
-            <div className="flex flex-col items-center justify-center gap-6 rounded-[2rem] border border-border bg-surface p-8 shadow-sm">
-              <p className="text-sm font-semibold uppercase tracking-[0.3em] text-brand">Reach Out Directly</p>
-              <div className="flex items-center gap-6">
+            <div className="relative flex flex-col items-center justify-center gap-6 overflow-hidden rounded-[2rem] border border-border bg-surface p-8 shadow-sm">
+              <img
+                src={heroImg}
+                alt=""
+                aria-hidden="true"
+                className="pointer-events-none absolute inset-0 h-full w-full select-none object-cover opacity-[0.08] mix-blend-luminosity"
+              />
+              <p className="relative z-10 text-sm font-semibold uppercase tracking-[0.3em] text-brand">Reach Out Directly</p>
+              <div className="relative z-10 flex items-center gap-6">
                 {socialLinks.map((social) => {
                   const Icon = social.icon
                   return (
@@ -539,7 +545,7 @@ function App() {
                   )
                 })}
               </div>
-              <p className="text-sm text-muted">Tap an icon to WhatsApp, DM, or email us — whichever's easiest.</p>
+              <p className="relative z-10 text-sm text-muted">Tap an icon to WhatsApp, DM, or email us — whichever's easiest.</p>
             </div>
           </div>
         </section>
