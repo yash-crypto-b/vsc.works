@@ -1,6 +1,7 @@
 import { Helmet } from 'react-helmet-async'
 import {
   ArrowRight,
+  Camera,
   Check,
   CheckCircle2,
   Eye,
@@ -13,9 +14,12 @@ import {
   Monitor,
   PenTool,
   Phone,
+  Scissors,
   Search,
+  Sparkles,
   Star,
   TrendingUp,
+  Video,
   MessageCircle,
 } from 'lucide-react'
 import { useEffect, useState } from 'react'
@@ -73,6 +77,26 @@ const services = [
     title: 'Branding',
     description: 'Shape a memorable brand experience that feels consistent, confident, and modern.',
     icon: PenTool,
+  },
+  {
+    title: 'Content Creation',
+    description: 'Produce scroll-stopping photos, graphics, and copy that keep your brand consistently visible.',
+    icon: Camera,
+  },
+  {
+    title: 'AI Automation',
+    description: 'Streamline lead capture, follow-ups, and reporting with smart automation built around your funnel.',
+    icon: Sparkles,
+  },
+  {
+    title: 'Video Production',
+    description: 'Plan, shoot, and produce brand films, ads, and reels that hold attention and drive action.',
+    icon: Video,
+  },
+  {
+    title: 'Editing',
+    description: 'Sharp, high-retention edits for social, ads, and long-form content, delivered on your timeline.',
+    icon: Scissors,
   },
 ]
 
@@ -215,8 +239,14 @@ function App() {
       </header>
 
       <main id="home">
-        <section id="hero" className="mx-auto grid max-w-7xl gap-12 px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-24">
-          <div className="flex flex-col justify-center">
+        <section id="hero" className="relative mx-auto grid max-w-7xl gap-12 overflow-hidden px-6 py-20 lg:grid-cols-[1.1fr_0.9fr] lg:px-8 lg:py-24">
+          <img
+            src={heroImg}
+            alt=""
+            aria-hidden="true"
+            className="pointer-events-none absolute -right-40 -top-40 z-0 h-[42rem] w-[42rem] select-none opacity-[0.06] mix-blend-luminosity"
+          />
+          <div className="relative z-10 flex flex-col justify-center">
             <div className="mb-6 inline-flex w-fit items-center gap-2 rounded-full border border-border bg-surface px-3 py-2 text-sm text-muted">
               <span className="h-2.5 w-2.5 rounded-full bg-brand" /> Premium digital growth for ambitious brands
             </div>
@@ -241,7 +271,7 @@ function App() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative z-10">
             <div className="rounded-[2rem] border border-border bg-surface p-6 shadow-soft">
               <div className="rounded-[1.5rem] border border-border bg-white p-6">
                 <div className="aspect-[4/5] rounded-[1.25rem] bg-[radial-gradient(circle_at_top_left,_#ff9b74,_#ffffff_60%)] p-6">
