@@ -411,12 +411,20 @@ function App() {
               <p className="text-sm font-semibold uppercase tracking-[0.3em] text-brand">Work Process</p>
               <h2 className="mt-4 font-heading text-3xl font-bold text-dark sm:text-4xl">A clear path from insight to impact.</h2>
             </div>
-            <div className="mt-10 flex flex-col gap-6 md:flex-row md:items-center md:justify-between">
+            <div className="mt-10 flex flex-col gap-8 md:flex-row md:items-start">
               {processSteps.map((step, index) => (
-                <div key={step} className="flex items-center gap-4 md:flex-col md:items-start">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand text-lg font-semibold text-white">{index + 1}</div>
-                  <div className="text-dark">{step}</div>
-                  {index < processSteps.length - 1 && <ArrowRight className="hidden text-brand md:block" />}
+                <div key={step} className="flex flex-1 items-start gap-3">
+                  <div className="flex flex-1 flex-col items-center gap-3 text-center">
+                    <div className="flex h-12 w-12 items-center justify-center rounded-full bg-brand text-lg font-semibold text-white">
+                      {index + 1}
+                    </div>
+                    <div className="font-medium text-dark">{step}</div>
+                  </div>
+                  {index < processSteps.length - 1 && (
+                    <div className="hidden h-12 flex-shrink-0 items-center md:flex">
+                      <ArrowRight className="text-brand" />
+                    </div>
+                  )}
                 </div>
               ))}
             </div>
